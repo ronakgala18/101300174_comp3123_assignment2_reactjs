@@ -14,7 +14,7 @@ export default function Create() {
 
 
     const postData = () => {
-        axios.post("https://101300174-comp-3123-assignment1.vercel.app/api/emp/employees", {
+        axios.post("https://react-assignment2-backend.herokuapp.com/api/emp/employees", {
             first_name: first_name,
             last_name: last_name,
             email: email,

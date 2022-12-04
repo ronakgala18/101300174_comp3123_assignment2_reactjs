@@ -11,7 +11,7 @@ export default function Login() {
     const [login, setLogin] = useState("");
 
     const postData = () => {
-        axios.post("https://101300174-comp-3123-assignment1.vercel.app/api/user/login", {
+        axios.post("https://react-assignment2-backend.herokuapp.com/api/user/login", {
             username: username,
             password: password,
         },
