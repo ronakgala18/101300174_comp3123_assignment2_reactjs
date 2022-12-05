@@ -14,7 +14,7 @@ export default function Create() {
 
 
     const postData = () => {
-        axios.post("https://react-assignment2-backend.herokuapp.com/api/emp/employees", {
+        axios.post("https://backend-assignment2.herokuapp.com/api/emp/employees", {
             first_name: first_name,
             last_name: last_name,
             email: email,
@@ -24,7 +24,7 @@ export default function Create() {
         ).then((response) => {
             console.log(response);
             setErrorMessage("")
-            setSuccessMessage("Employee has be successfully added")
+            setSuccessMessage("Employee has been successfully added")
         }).catch(error => {
             setSuccessMessage("")
             setErrorMessage(error.response.data.message)
@@ -46,14 +46,14 @@ export default function Create() {
                         <label > Email</label>
                         <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
                         <label > Gender</label>
-                        <select value={gender} onChange={(e) => setGender(e.target.value)} id="countries" class=" rounded-md border border-gray-200 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1  block w-full p-2.5 ">
+                        <select value={gender} onChange={(e) => setGender(e.target.value)} id="countries" >
                             <option selected>Choose a gender</option>
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
                             <option value="Other">Other</option>
                         </select>
                         <label > Salary</label>
-                        <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" placeholder="Salary" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
+                        <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" placeholder="Salary" />
                         <p >{successMessage}</p>
                         <p >{errorMessage}</p>
                         <div>

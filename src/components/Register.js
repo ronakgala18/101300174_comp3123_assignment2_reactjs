@@ -10,15 +10,15 @@ export default function Register() {
     const [errorMessage, setErrorMessage] = useState("");
 
     const postData = () => {
-        axios.post("https://react-assignment2-backend.herokuapp.com/api/user/signup", {
+        axios.post("https://backend-assignment2.herokuapp.com/api/user/signup", {
             username: username,
-            email: email,
             password: password,
+            email: email,
         },
         ).then((response) => {
             console.log(response);
             setErrorMessage("")
-            setSuccessMessage("Account has been registered successfully!")
+            setSuccessMessage("Account has been created successfully!")
         }).catch(error => {
             setErrorMessage(error.response.data.message)
 
@@ -33,11 +33,11 @@ export default function Register() {
                     <div ></div>
                     <div >
                         <label > Username </label>
-                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
+                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username"  />
                         <label > Email </label>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Username" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Username" />
                         <label > Password</label>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
+                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
                         <p >{successMessage}</p>
                         <p >{errorMessage}</p>
                         <div >

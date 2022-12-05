@@ -25,7 +25,7 @@ export default function Update() {
     }, []);
 
     const updateAPIData = () => {
-        axios.put(`https://react-assignment2-backend.herokuapp.com/api/emp/employees/${id}`, {
+        axios.put(`https://backend-assignment2.herokuapp.com/api/emp/employees/${id}`, {
             first_name,
             last_name,
             email,
@@ -64,8 +64,8 @@ export default function Update() {
                         </select>
                         <label > Salary</label>
                         <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" placeholder="Salary"  />
-                        <p className="text-green-400">{successMessage}</p>
-                        <p className="text-red-400">{errorMessage}</p>
+                        <p >{successMessage}</p>
+                        <p >{errorMessage}</p>
                         <div >
                             <button onClick={updateAPIData} type="submit" >Update</button>
                             <Link to='/view'>

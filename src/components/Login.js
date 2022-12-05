@@ -11,7 +11,7 @@ export default function Login() {
     const [login, setLogin] = useState("");
 
     const postData = () => {
-        axios.post("https://react-assignment2-backend.herokuapp.com/api/user/login", {
+        axios.post("https://backend-assignment2.herokuapp.com/api/user/login", {
             username: username,
             password: password,
         },
@@ -33,9 +33,9 @@ export default function Login() {
                     <div></div>
                     <div >
                         <label > Username </label>
-                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
+                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username"  />
                         <label > Password</label>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" />
+                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password"  />
                         <p >{login}</p>
                         <div >
                             <button onClick={postData} type="submit">Login</button>
